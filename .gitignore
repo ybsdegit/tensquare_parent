@@ -1,3 +1,4 @@
 # Project exclude paths
 /tensquare_base/target/
 /tensquare_common/target/
+/tensquare_rabbimqtest/
