@@ -1,5 +1,6 @@
 package com.tensquare.user.controller;
 
+import com.tensquare.user.pojo.Admin;
 import com.tensquare.user.pojo.User;
 import com.tensquare.user.service.UserService;
 import entity.PageResult;
@@ -27,6 +28,20 @@ public class UserController {
 	@Autowired
 	private RedisTemplate redisTemplate;
 
+	/**
+	 * 登录
+	 * @return
+	 */
+	@PostMapping("/login")
+	public Result login(@RequestBody User user){
+		user = userService.login(user.getMobile(), user.getPassword());
+		if (user == null){
+			return new Result(false, StatusCode.ERROR, "登录失败");
+		}
+
+		// 是的前后端可以通过的操作。 采用JWT来实现
+		return new Result(true,StatusCode.OK,"登录成功");
+	}
 
 	/**
 	 * 发送短信验证码
