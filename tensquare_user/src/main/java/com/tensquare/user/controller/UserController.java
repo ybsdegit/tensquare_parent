@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
+import util.JwtUtil;
 
+import java.util.HashMap;
 import java.util.Map;
 /**
  * 控制器层
@@ -28,6 +30,9 @@ public class UserController {
 	@Autowired
 	private RedisTemplate redisTemplate;
 
+	@Autowired
+	private JwtUtil jwtUtil;
+
 	/**
 	 * 登录
 	 * @return
@@ -40,7 +45,11 @@ public class UserController {
 		}
 
 		// 是的前后端可以通过的操作。 采用JWT来实现
-		return new Result(true,StatusCode.OK,"登录成功");
+		String token = jwtUtil.createJWT(user.getId(), user.getMobile(), "user");
+		Map<String, Object> map = new HashMap<>();
+		map.put("token", token);
+		map.put("roles", "user");
+		return new Result(true,StatusCode.OK,"登录成功", map);
 	}
 
 	/**

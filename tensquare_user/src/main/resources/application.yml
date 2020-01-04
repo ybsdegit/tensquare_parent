@@ -15,3 +15,15 @@ spring:
     host: 192.168.2.130
   rabbitmq:
     host: 192.168.2.130
+
+jwt:
+  config:
+    key: paulson
+    ttl: 3600000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
