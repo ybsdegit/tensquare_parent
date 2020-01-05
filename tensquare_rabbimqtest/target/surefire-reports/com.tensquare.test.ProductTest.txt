@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.tensquare.test.ProductTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 32.083 s <<< FAILURE! - in com.tensquare.test.ProductTest
+sendMsg1  Time elapsed: 4.018 s  <<< ERROR!
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: connect
+	at com.tensquare.test.ProductTest.sendMsg1(ProductTest.java:27)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at com.tensquare.test.ProductTest.sendMsg1(ProductTest.java:27)
+
+sendMsg2  Time elapsed: 6.035 s  <<< ERROR!
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: connect
+	at com.tensquare.test.ProductTest.sendMsg2(ProductTest.java:35)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at com.tensquare.test.ProductTest.sendMsg2(ProductTest.java:35)
+
+sendMsg3  Time elapsed: 6.038 s  <<< ERROR!
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: connect
+	at com.tensquare.test.ProductTest.sendMsg3(ProductTest.java:43)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at com.tensquare.test.ProductTest.sendMsg3(ProductTest.java:43)
+
