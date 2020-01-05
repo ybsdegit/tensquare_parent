@@ -31,10 +31,9 @@ public class JwtInterceptor implements HandlerInterceptor{
         // 拦截器只是负责把1请求头中包含Authorization的请求头解析
         String header = request.getHeader("Authorization");
 
-        if (StringUtils.isNotEmpty(header) && header.startsWith("Bearer")){
+        if (StringUtils.isNotEmpty(header) && header.startsWith("Bearer ")){
             // 如果有包含 Authorization头信息，对其进行解析
                 String token = header.substring(7);
-
                 try {
                     Claims claims = jwtUtil.parseJWT(token);
                     String roles = (String) claims.get("roles");
