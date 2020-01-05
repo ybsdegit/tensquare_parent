@@ -12,6 +12,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 import util.JwtUtil;
 
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 /**
@@ -32,6 +33,15 @@ public class UserController {
 
 	@Autowired
 	private JwtUtil jwtUtil;
+
+	/**
+	 * 更新好友粉丝数和用户关注数
+	 */
+	@PutMapping("/{userid}/{friendid}/{x}")
+	public void updateFanscountAndFollowcount(@PathVariable String userid, @PathVariable String friendid, @PathVariable int x){
+		userService.updateFanscountAndFollowcount(x, userid, friendid);
+	}
+
 
 	/**
 	 * 登录

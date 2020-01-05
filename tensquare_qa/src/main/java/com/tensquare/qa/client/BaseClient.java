@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @date 2020/1/4 18:30
  */
 
-@FeignClient("tensquare‐base ")
+@FeignClient("tensquare-base")
 public interface BaseClient {
 
     @GetMapping("/label/{labelId}")
