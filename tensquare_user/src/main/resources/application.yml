@@ -19,7 +19,7 @@ spring:
 jwt:
   config:
     key: paulson
-    ttl: 3600000
+#    ttl: 3600000
 
 eureka:
   client:

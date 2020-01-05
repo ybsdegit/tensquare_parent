@@ -6,6 +6,8 @@ import entity.PageResult;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +23,20 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/label")
+@RefreshScope
 public class LabelController {
 
     @Autowired
     private LabelService labelService;
+
+    @Value("${ip}")
+    private String configip;
+
+    @GetMapping("/configip")
+    public Result getConfigIp(){
+        System.out.println("IP为: "+configip);
+        return new Result(true, StatusCode.OK, "查询成功", configip);
+    }
 
     @GetMapping
     public Result findAll(){
