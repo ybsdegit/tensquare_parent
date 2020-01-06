@@ -45,8 +45,8 @@
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
-                            <directory>${project.build.directory}
-                            </directory>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
                          </resource>
                     </resources>
                     <dockerHost>http://192.168.2.130:2375</dockerHost>
