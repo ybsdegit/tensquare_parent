@@ -9,10 +9,10 @@ spring:
 
 aliyun:
   sms:
-    accessKeyId: LTAI4FibViPiJ6qK6916PHkp
-    accessKeySecret: M2tK5gOOjgxZQ3fqKp8yrulKiuks24
-    template_code: SMS_181866518
-    sign_name: 鲍森问答论坛
+    accessKeyId: ****
+    accessKeySecret: ***
+    template_code: ***
+    sign_name: ***
 
 
 
